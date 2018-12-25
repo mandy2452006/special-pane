@@ -20,7 +20,7 @@ public class NewJFrame1 extends javax.swing.JFrame {
         initComponents();
         jTabbedPane1.addTab("A", new JButton("a"));
         jTabbedPane1.addTab("B", new JButton("b"));
-        
+        //在jtabblePane1的code 裡的 Custom Creation Code	加上new ClosableTabbedPane();
     }
 
     /**
@@ -32,7 +32,7 @@ public class NewJFrame1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jTabbedPane1 = new ClosableTabbedPane();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTree1 = new javax.swing.JTree();
         jScrollPane2 = new javax.swing.JScrollPane();
