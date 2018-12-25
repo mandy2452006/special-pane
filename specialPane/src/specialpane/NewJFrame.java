@@ -6,6 +6,10 @@
 package specialpane;
 
 import java.io.File;
+import javax.swing.JTree;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
+import javax.swing.tree.DefaultMutableTreeNode;
 
 /**
  *
@@ -20,6 +24,15 @@ public class NewJFrame extends javax.swing.JFrame {
         initComponents();
         FileTree fileTree=new FileTree(new File("."));
         jSplitPane2.setLeftComponent(fileTree);
+        //在portal下載commons io,在project下的library按右鍵選擇add JAR/Forlder ,選擇commons io
+        JTree tree=fileTree.getTree();
+        tree.addTreeSelectionListener(new TreeSelectionListener() {
+            @Override
+            public void valueChanged(TreeSelectionEvent e) {
+                DefaultMutableTreeNode treeNode=(DefaultMutableTreeNode)e.getPath().getLastPathComponent();
+                System.out.println(treeNode.getUserObject().getClass());
+            }
+        });
         
     }
 
