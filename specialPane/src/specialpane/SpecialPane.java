@@ -26,8 +26,10 @@ public class SpecialPane {
         fr.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         JButton bt1=new JButton("1");
         JButton bt2=new JButton("2");
-        JSplitPane jSplitPane=new JSplitPane(JSplitPane.VERTICAL_SPLIT,bt1,bt2);
+        JSplitPane jSplitPane=new JSplitPane(JSplitPane.HORIZONTAL_SPLIT,bt1,bt2);
         jSplitPane.setOneTouchExpandable(true); //箭頭
+        jSplitPane.setDividerLocation(400);//這行要work的話要先指定jsplitPane的大小,值為0~1之間實為左邊所佔的比例,值不在0~1時為絕對值(ex. 500乘80%=400,左邊佔80%)
+        jSplitPane.setResizeWeight(0.6);
         fr.add(jSplitPane);
         fr.setVisible(true);
     }
